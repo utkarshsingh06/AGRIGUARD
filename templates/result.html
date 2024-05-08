@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Agriguard - Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: greenyellow;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        h2 {
+            color: #666;
+            margin-top: 30px;
+        }
+
+        p {
+            color: #888;
+            line-height: 1.6;
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+    <h1>Disease Results</h1>
+    {% if prediction %}
+    <h2>Predicted Disease Class:</h2>
+    <p>{{ prediction }}</p>
+    <h2>Disease Details and Cure:</h2>
+    {% if prediction == 'Apple___Apple_scab' %}
+    <p>This fungal disease affects apple trees, causing dark lesions on leaves and fruit, leading to reduced yield and
+        quality.</p>
+    <p><strong>Cure:</strong> Management involves cultural practices like pruning to improve air circulation, and
+        fungicide applications.</p>
+    {% elif prediction == 'Apple___Black_rot' %}
+    <p>Another fungal disease of apple trees, black rot causes brown lesions on fruit and foliage, leading to fruit
+        decay.</p>
+    <p><strong>Cure:</strong> Cultural practices like sanitation and fungicide applications are key for management.</p>
+    {% elif prediction == 'Apple___Cedar_apple_rust' %}
+    <p>A fungal disease affecting apples and related species, cedar apple rust causes orange spots on leaves and fruit.
+    </p>
+    <p><strong>Cure:</strong> Management involves removing alternate hosts like cedar trees and applying fungicides.</p>
+    {% elif prediction == 'Apple___healthy' %}
+    <p>The apple tree appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Blueberry___healthy' %}
+    <p>The blueberry plant appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Cherry_(including_sour)___Powdery_mildew' %}
+    <p>This fungal disease affects cherry trees, causing white powdery patches on leaves and fruit.</p>
+    <p><strong>Cure:</strong> Management includes fungicide applications and pruning to improve air circulation.</p>
+    {% elif prediction == 'Cherry_(including_sour)___healthy' %}
+    <p>The cherry tree appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Corn_(maize)___Cercospora_leaf_spot Gray_leaf_spot' %}
+    <p>These fungal diseases affect corn, causing leaf lesions which can reduce photosynthesis and yield.</p>
+    <p><strong>Cure:</strong> Crop rotation and fungicide applications are common management strategies.</p>
+    {% elif prediction == 'Corn_(maize)___Common_rust_' %}
+    <p>These fungal diseases also affect corn, causing characteristic rust-colored lesions on leaves.</p>
+    <p><strong>Cure:</strong> Management involves resistant crop varieties and fungicide applications.</p>
+    {% elif prediction == 'Corn_(maize)___Northern_Leaf_Blight' %}
+    <p>Another fungal disease of corn, northern leaf blight causes cigar-shaped lesions on leaves, leading to yield
+        loss.</p>
+    <p><strong>Cure:</strong> Management involves resistant crop varieties and fungicide applications.</p>
+    {% elif prediction == 'Corn_(maize)___healthy' %}
+    <p>The corn plant appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Grape___Black_rot' %}
+    <p>This fungal disease affects grapes, causing brown lesions on leaves and fruit, leading to reduced yield and
+        quality.</p>
+    <p><strong>Cure:</strong> Management includes cultural practices like pruning and fungicide applications.</p>
+    {% elif prediction == 'Grape___Esca_(Black_Measles)' %}
+    <p>A fungal disease affecting grapevines, causing leaf spots and vine decline.</p>
+    <p><strong>Cure:</strong> Management involves pruning, cultural practices, and fungicide applications.</p>
+    {% elif prediction == 'Grape___Leaf_blight_(Isariopsis_Leaf_Spot)' %}
+    <p>Another fungal disease of grapevines, leaf blight causes spots on leaves, leading to reduced yield.</p>
+    <p><strong>Cure:</strong> Management includes fungicide applications and cultural practices.</p>
+    {% elif prediction == 'Grape___healthy' %}
+    <p>The grapevine appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Orange___Haunglongbing_(Citrus_greening)' %}
+    <p>A bacterial disease affecting citrus trees, citrus greening causes yellowing and decline of leaves and fruit.</p>
+    <p><strong>Cure:</strong> Management includes removing infected trees and controlling vector insects.</p>
+    {% elif prediction == 'Peach___Bacterial_spot' %}
+    <p>This bacterial disease affects peach trees, causing dark lesions on leaves and fruit, leading to reduced yield
+        and quality.</p>
+    <p><strong>Cure:</strong> Management involves cultural practices and copper-based fungicides.</p>
+    {% elif prediction == 'Peach___healthy' %}
+    <p>The peach tree appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Pepper,_bell___Bacterial_spot' %}
+    <p>This bacterial disease affects bell peppers, causing dark lesions on leaves and fruit.</p>
+    <p><strong>Cure:</strong> Management includes sanitation and copper-based fungicides.</p>
+    {% elif prediction == 'Pepper,_bell___healthy' %}
+    <p>The bell pepper plant appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Potato___Early_blight' %}
+    <p>This fungal disease affects potatoes, causing dark lesions on leaves and tubers, leading to reduced yield and
+        quality.</p>
+    <p><strong>Cure:</strong> Management involves crop rotation, resistant varieties, and fungicide applications.</p>
+    {% elif prediction == 'Potato___Late_blight' %}
+    <p>Another fungal disease of potatoes, late blight causes dark lesions on leaves and stems, leading to rapid plant
+        decline.</p>
+    <p><strong>Cure:</strong> Management includes cultural practices and fungicide applications.</p>
+    {% elif prediction == 'Potato___healthy' %}
+    <p>The potato plant appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Raspberry___healthy' %}
+    <p>The raspberry plant appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Soybean___healthy' %}
+    <p>The soybean plant appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Squash___Powdery_mildew' %}
+    <p>This fungal disease affects squash, causing white powdery patches on leaves and fruit.</p>
+    <p><strong>Cure:</strong> Management includes cultural practices and fungicide applications.</p>
+    {% elif prediction == 'Strawberry___Leaf_scorch' %}
+    <p>This disease causes browning and death of leaf tissue in strawberry plants.</p>
+    <p><strong>Cure:</strong> Management involves sanitation and cultural practices.</p>
+    {% elif prediction == 'Strawberry___healthy' %}
+    <p>The strawberry plant appears healthy with no signs of disease.</p>
+    {% elif prediction == 'Tomato___Bacterial_spot' %}
+    <p>This bacterial disease affects tomatoes, causing dark, water-soaked lesions on leaves and fruit.</p>
+    <p><strong>Cure:</strong> Management involves crop rotation, sanitation, and copper-based bactericides.</p>
+    {% elif prediction == 'Tomato___Early_blight' %}
+    <p>This fungal disease of tomatoes is characterized by dark concentric lesions on lower leaves.</p>
+    <p><strong>Cure:</strong> Management includes crop rotation, fungicide applications, and removing infected plant
+        debris.</p>
+    {% elif prediction == 'Tomato___Late_blight' %}
+    <p>Late blight is a fungal disease causing dark, water-soaked lesions on leaves, stems, and fruit.</p>
+    <p><strong>Cure:</strong> Management involves fungicide applications, cultural practices, and removing infected
+        plant material.</p>
+    {% elif prediction == 'Tomato___Leaf_Mold' %}
+    <p>Leaf mold is a fungal disease causing yellowing and fuzzy growth on the undersides of leaves.</p>
+    <p><strong>Cure:</strong> Management includes improving air circulation, avoiding overhead watering, and fungicide
+        applications.</p>
+    {% elif prediction == 'Tomato___Septoria_leaf_spot' %}
+    <p>Septoria leaf spot is a fungal disease characterized by small, dark spots with yellow halos on leaves.</p>
+    <p><strong>Cure:</strong> Management involves crop rotation, sanitation, and fungicide applications.</p>
+    {% elif prediction == 'Tomato___Spider_mites Two-spotted_spider_mite' %}
+    <p>Spider mites are tiny pests that feed on tomato leaves, causing stippling, webbing, and leaf yellowing.</p>
+    <p><strong>Cure:</strong> Management involves cultural practices and applying miticides if infestation levels are
+        high.</p>
+    {% elif prediction == 'Tomato___Target_Spot' %}
+    <p>Target spot is a fungal disease causing dark, concentric lesions on leaves and fruit.</p>
+    <p><strong>Cure:</strong> Management includes crop rotation, sanitation, and fungicide applications.</p>
+    {% elif prediction == 'Tomato___Tomato_Yellow_Leaf_Curl_Virus' %}
+    <p>Yellow leaf curl virus is a viral disease causing yellowing, curling, and stunting of leaves.</p>
+    <p><strong>Cure:</strong> Management involves using virus-resistant tomato varieties, controlling whiteflies, and
+        removing infected plants.</p>
+    {% elif prediction == 'Tomato___Tomato_mosaic_virus' %}
+    <p>Mosaic virus causes mottling, distortion, and stunting of leaves.</p>
+    <p><strong>Cure:</strong> Management involves using virus-free seed, controlling aphid vectors, and removing
+        infected plants promptly.</p>
+    {% elif prediction == 'Tomato___healthy' %}
+    <p>The tomato plant appears healthy with no signs of disease.</p>
+    {% endif %}
+    {% endif %}
+    <br>
+    <a href="/">Home Page</a>
+    </div>
+</body>
+
+</html>
