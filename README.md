@@ -1,22 +1,18 @@
 ML PROJECT
 
-WEBSITE
-HOMEPAGE
-![alt text](/app/static/images/image.png)
-
-DISEASE DETECTION
-![alt text](/app/static/images/image-1.png)
+![WEBSITE](static/images/image.png)
 
 
-SAMPLE IMAGE( ORANGE LEAF)
+![DISEASE DETECTION](static/images/image-1.png)
 
-![alt text](/app/static/images/image-2.png)
 
-DISEASE PREDICTION
 
-![alt text](/app/static/images/image-3.png)
+![SAMPLE IMAGE( ORANGE LEAF)](static/images/image-2.png)
 
-![alt text](/app/static/images/image-4.png)
+
+![UPLOAD IMAGE](static/images/image-3.png)
+
+![PREDICTION AND REMEDY](static/images/image-4.png)
 
 
 
