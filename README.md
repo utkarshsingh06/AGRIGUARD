@@ -7,12 +7,9 @@ ML PROJECT
 
 
 
-![SAMPLE IMAGE( ORANGE LEAF)](static/images/image-2.png)
+![WEATHER INFORMATION](static/images/wth.png)
 
 
-![UPLOAD IMAGE](static/images/image-3.png)
-
-![PREDICTION AND REMEDY](static/images/image-4.png)
 
 
 

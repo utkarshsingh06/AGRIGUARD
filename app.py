@@ -35,7 +35,9 @@ def home():
 @app.route('/disease')
 def disease():
     return render_template('disease.html')
-
+@app.route('/weather')
+def weather():
+    return render_template('weather.html')
 # Define route for prediction
 @app.route('/predict', methods=['POST'])
 def make_prediction():
